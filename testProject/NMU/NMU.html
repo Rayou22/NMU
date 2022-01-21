@@ -1,0 +1,597 @@
+<html>
+<head>
+<title>National Meanchey University</title>
+<link rel="icon" href="image/nmu.png">
+<style>
+    body{
+        background-image: url(image/NMU1.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+        
+    }
+    
+    input[type="text"]:hover{
+        border: 3px solid pink;
+    }
+    .gender:hover{
+        border: 3px solid pink;
+    }
+    .nationality:hover{
+        border: 3px solid pink;
+    }
+    .date:hover{
+        border: 3px solid pink;
+    }
+    .title{
+        font-family: Khmer OS Muol Light;
+        text-align: center;
+        color: black;
+        text-decoration: underline;
+        font-size: 25px;
+        margin-left: 200px;
+        margin-top: 50px;
+    }
+    
+    .container{
+        max-width: 750px;
+        min-width: 750px;
+        height: 1280px;
+        box-shadow: 0 0 10px;
+        border-radius: 10px;
+        margin: auto;
+        padding: 20px;
+        display:block;
+        background-color:rgba(255,255,255,0.7);
+        
+    }
+    
+    /*---------Upload and preview image--------*/
+    
+    .upload_image{
+        height: 10px;
+        width: 120px;
+        float: right;
+        padding-right: 80px;
+        margin-top: 80px;
+    }
+    .upload_image .grid {
+        margin-top:100px;
+        display:flex;
+        border: 2px solid;
+        border-color: fuchsia blue green;
+    }
+    .upload_image .grid .form-element {
+        width:115px;
+        height:150px;
+        box-shadow:0px 0px 20px 5px rgba(100,100,100,0.1);
+    }
+    .upload_image .grid .form-element input {
+        display:none;
+    }
+    .upload_image .grid .form-element img {
+        width:115px;
+        height:150px;
+        object-fit:cover;
+    }
+    .upload_image .grid .form-element div{
+        position:relative;
+        height:30px;
+        width: 115px;
+        margin-top:-30px;
+        background:rgba(0,0,0,0.5);
+        text-align:center;
+        line-height:30px;
+        font-size:13px;
+        color:white;
+        font-weight:600;
+    }
+    .upload_image .grid .form-element div span {
+        font-size:20px;
+    }
+    .upload_image .grid .form-element div:hover{
+        color:rgb(255, 0, 68);
+    }
+
+    /*--------Personal imformation--------*/
+    
+    .personal{
+        align-items: center;
+        margin-top: 50px;
+    }
+    .box_1 .label_firstname{
+        font-family: Khmer OS Battambang;
+        margin-left: 100px;
+    }
+    .box_1 .label_name{
+        font-family: Khmer OS Battambang;
+    }
+    .box_1 .label_latang{
+        font-family: Khmer OS Battambang;
+        margin-left: 100px;
+    }
+    .box_1 input{
+        border-color: fuchsia blue green;
+        border-radius: 10px;
+        height: 35px;
+        width: 150px;
+        padding-left: 5px;
+        font-family: Khmer OS Battambang;
+        outline: none;
+        text-transform: uppercase;
+    }
+    .box_1 .firstname{
+        margin-left: 10px;
+    }
+    .name{
+        margin-bottom:20px;
+        margin-left: 10px;
+    }
+    .box_1 .latang{
+        margin-bottom: 20px;
+        margin-left: 0px;
+        width: 195px;
+    }
+    .gender{
+       border-radius: 10px;
+        height: 35px;
+        width: 65px;
+        padding-left: 5px;
+        font-family: Khmer OS Battambang;
+        outline: none;
+        border: 2px solid ;
+        border-color: fuchsia blue green;
+        
+    }
+    .nationality{
+        border-radius: 10px;
+        height: 35px;
+        width: 75px;
+        padding-left: 5px;
+        font-family: Khmer OS Battambang;
+        outline: none;
+        margin-bottom: 20px;
+        border: 2px solid ;
+        border-color: fuchsia blue green;
+        
+    }
+    .single{
+        border-radius: 10px;
+        height: 35px;
+        width: 160px;
+        padding-left: 5px;
+        font-family: Khmer OS Battambang;
+        outline: none;
+        margin-bottom: 20px;
+        border: 2px solid ;
+        border-color: fuchsia blue green;
+        
+    }
+    .single:hover{
+        border: 3px solid pink;
+    }
+    .box_2{
+        margin-left: 75px;
+    }
+    .box_2 input{
+        border-radius: 10px;
+        height: 35px;
+        width: 200px;
+        padding-left: 5px;
+        font-weight: 500;
+        font-size: 15px;
+        font-family: Khmer OS Battambang;
+        outline: none;
+        border: 2px solid ;
+        border-color: fuchsia blue green;
+        
+    }
+    .box_2 label{
+        font-family: Khmer OS Battambang;
+        margin-left: 25px;
+    }
+    .box_2 .date{
+        width: 155px;
+    }
+    .address{
+        margin-left: 75px;
+    }
+    .address label{
+        margin-left: 25px;
+    }
+    .address input{
+       border-radius: 10px;
+        height: 35px;
+        width: 100px;
+        padding-left: 5px;
+        font-weight: 500;
+        font-size: 15px;
+        font-family: Khmer OS Battambang;
+        outline: none; 
+        margin-bottom: 20px;
+        border: 2px solid ;
+        border-color: fuchsia blue green;
+        
+    }
+    .address .provine{
+       border-radius: 10px;
+        height: 35px;
+        width: 155px;
+        padding-left: 5px;
+        font-weight: 500;
+        font-size: 15px;
+        font-family: Khmer OS Battambang;
+        outline: none; 
+        margin-bottom: 20px;
+    }
+    .address label{
+        font-family: Khmer OS Battambang;
+    }
+    .contact{
+        font-family: Khmer OS Battambang;
+        margin-left: 75px;
+    }
+    .contact label{
+        margin-left: 25px;
+    }
+    .contact .card{
+        margin-bottom: 20px;
+    }
+    .phone:hover{
+        border: 3px solid pink;
+    }
+     .phone{
+        
+         margin-bottom: 20px;
+    }
+    .email:hover{
+        border: 3px solid pink;
+    }
+    .email{
+        font-family: Khmer OS Battambang; 
+        margin-bottom: 20px;
+    }
+    .contact input{
+        height: 35px;
+        width: 217px;
+        border-radius: 10px;
+        font-family: Khmer OS Battambang;
+        outline: none;
+        padding-left: 5px;
+        border: 2px solid ;
+        border-color: fuchsia blue green;
+        
+    }
+    
+   /*----------Study History---------*/
+    
+    .history{
+        font-family: Khmer OS Battambang;
+        padding-left: 75px;
+        
+    }
+    .history p{
+        font-weight: bold;
+    }
+    .history label{
+        padding-left: 25px;
+    }
+    .history input{
+        border-radius: 10px;
+        height: 35px;
+        width: 80px;
+        outline: none;
+        padding-left: 5px;
+        font-family: Khmer OS Battambang;
+        border: 2px solid ;
+        border-color: fuchsia blue green;
+        
+    }
+    .history .school1{
+        width: 200px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+        
+    }
+    .history .school2{
+         width: 200px;
+        margin-bottom: 20px;
+        margin-left: 10px;
+    }
+     .history .school3{
+         width: 200px;
+        margin-bottom: 20px;
+        margin-left: 31px;
+    }
+    .history .school4{
+         width: 315px;
+        margin-bottom: 20px;
+        margin-left: 31px;
+    }
+    
+    /*-------Family Guardian-------*/
+    
+    .family{
+        margin-left: 30px;
+        font-family: Khmer OS Battambang;
+    }
+    .family input{
+        height: 35px;
+        width: 165px;
+        border-radius: 10px;
+        outline: none;
+        padding-left: 5px;
+        font-family: Khmer OS Battambang;
+        border: 2px solid ;
+        border-color: fuchsia blue green;
+        
+    }
+    .family .guardian{
+        font-weight: bold;
+        padding-left: 45px;
+    }
+    .family label{
+        padding-left: 70px;
+        
+    }
+    .family .work{
+        margin-bottom: 20px;
+    }
+    
+    /*------Choose Major------*/
+    .major {
+        padding-left: 75px;
+        font-family:Khmer OS Battambang;
+        font-weight: bold;
+    }
+    .major input{
+        height: 35px;
+        width: 100px;
+        font-family:Khmer OS Battambang;
+        border-radius: 10px;
+        padding-left: 5px;
+        outline: none;
+        border: 2px solid ;
+        border-color: fuchsia blue green;
+        
+    }
+    .major .label_major{
+        font-weight: 100;
+        margin-left: 25px;
+    }
+    .major label{
+        font-weight: 100;
+    }
+    .major select{
+        height: 35px;
+        width: 185px;
+        font-family:Khmer OS Battambang;
+        border-radius: 10px;
+        padding-left: 5px;
+        outline: none;
+        margin-bottom: 20px;
+        border: 2px solid ;
+        border-color: fuchsia blue green;
+        
+    }
+    .major select:hover{
+        border: 3px solid pink;
+    }
+    .major .major1{
+        width: 150px;
+    }
+    .major .gen{
+        width: 50px;
+    }
+    .major .year{
+        width: 80px;
+        border: 2px solid ;
+        border-color: fuchsia blue green;
+        
+    }
+    .major .certificate{
+        width: 210px;
+    }
+    .major .gen_exam{
+        width: 195px;
+    }
+    .major .gen_exam:hover{
+       border: 3px solid pink; 
+    }
+    .major .label_cert{
+        margin-left: 23px;
+    }
+    .button{
+        margin-left: 75px;
+        padding-top: 20px;
+    }
+    .button input{
+        height: 45px;
+        width: 600px;
+        background-color: forestgreen;
+        font-size: 17px;
+        border-radius: 10px;
+        color: white;
+        box-shadow: inset 0 0 0 0 rgb(255, 0, 68);
+        transition:0.1s;
+        outline: none;
+        font-family: Cooper Black;
+    }
+    .button input:hover{
+        box-shadow: inset 600px 0 0 0 rgb(255, 0, 68);
+        font-size: 20px;
+        font-family: Cooper Black;
+    }
+</style>
+</head>
+<body>
+    
+    <div class="container">
+        
+        <div class="upload_image">
+            <div class="grid">
+                <div class="form-element">
+                    <input type="file" id="file-1" accept="image/*">
+                    <label for="file-1" id="file-1-preview">
+                    <img src="https://bit.ly/3ubuq5o">
+                <div>
+                    <span>+</span>
+                </div>
+                    </label>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="title">
+            <p>ពាក្យសុំចុះឈ្មោះចូលរៀន</p>
+        </div>
+        
+        
+        <div class="personal">
+                   
+            
+            <p style="font-family: Khmer OS Battambang; font-weight: bold; padding-left: 75px;">ព័ត៌មានផ្ទាល់ខ្លួន</p>
+            <div class="box_1">
+                <label class="label_firstname">នាមត្រកូល</label>
+                <input class="firstname" type="text" placeholder="គោត្តនាម">
+                <label class="label_name">នាម</label>
+                <input class="name" type="text" placeholder="នាម"><br>
+                <label class="label_latang">អក្សរឡាតាំង</label>
+                <input class="latang" type="text" placeholder="ឈ្មោះជាអក្សរឡាតាំង">
+                 
+                <select class="gender">
+                    <option>ភេទ</option>
+                    <option>ប្រុស</option>
+                    <option>ស្រី</option>
+                </select>
+                
+               
+                <select class="nationality">
+                    <option>សញ្ជាតិ</option>
+                    <option>ខ្មែរ</option>
+                    <option>ខ្មែរអ៊ីស្លាម</option>
+                </select>
+            </div>
+            
+            <div class="box_2">
+                
+                    <label>ថ្ងៃខែឆ្នាំកំណើត៖</label>
+                    <input type="date" class="date">
+                
+                <select class="single">
+                    <option>ស្ថានភាពគ្រួសារ</option>
+                    <option>នៅលីវ</option>
+                    <option>រៀបការ</option>
+                </select>
+            </div>
+            <div class="address">
+                <label>ទីកន្លែងកំណើត៖</label>
+                <input type="text" placeholder="ភូមិ">
+                <input type="text" placeholder="ឃុំ/សង្កាត់">
+                <input type="text" placeholder="ស្រុក/ក្រុង">
+                <input class="provine" type="text" placeholder="រាជធានី/ខេត្ត">
+            </div>
+            <div class="contact">
+                <label>លេខអត្តសញ្ញាណប័ណ្ណ៖</label>
+                <input class="card" type="text" placeholder="សូមបញ្ចូល"><br>
+                <label>ទូរស័ព្ទ៖</label>
+                <input class="phone" type="tel" placeholder="សូមបញ្ចូលលេខទូរស័ព្ទ">
+                <label>អ៊ីម៉ែល៖</label>
+                <input class="email" type="email" placeholder="example@gmail.com">
+            </div>
+        </div>
+    
+        <div class="history">
+            <p>ប្រវត្តិការសិក្សា</p>
+            <label>ពីឆ្នាំ</label>
+            <input class="year" type="text">
+            <label>ដល់</label>
+            <input type="text">
+            <label>បឋមសិក្សា</label>
+            <input class="school1" type="text" placeholder="សូមបញ្ចូលព័ត៌មាន">
+            <br>
+            <label>ពីឆ្នាំ</label>
+            <input type="text">
+            <label>ដល់</label>
+            <input type="text">
+            <label>អនុវិទ្យាល័យ</label>
+            <input class="school2" type="text" placeholder="សូមបញ្ចូលព័ត៌មាន">
+            <br>
+            <label>ពីឆ្នាំ</label>
+            <input class="schools" type="text">
+            <label>ដល់</label>
+            <input type="text">
+            <label>វិទ្យាល័យ</label>
+            <input class="school3" type="text" placeholder="សូមបញ្ចូលព័ត៌មាន">
+            <br>
+            <label>ពីឆ្នាំ</label>
+            <input class="schools" type="text">
+            <label style="padding-left: 35px">ដល់បច្ចុប្បន្ន</label>
+            <input class="school4" type="text" placeholder="សូមបញ្ចូលព័ត៌មាន">
+        </div>
+        <div class="family">
+            <p class="guardian">អំពីអាណាព្យាបាល</p>
+            <label>ឪពុកឈ្មោះ</label>
+            <input type="text" placeholder="សូមបញ្ចូលឈ្មោះ">
+            <label>មុខរបរសព្វថ្ងៃ</label>
+            <input class="work" type="text" placeholder="សូមបញ្ចូលមុខរបរ"><br>
+            <label>ម្តាយឈ្មោះ</label>
+            <input type="text" placeholder="សូមបញ្ចូលឈ្មោះ">
+            <label>មុខរបរសព្វថ្ងៃ</label>
+            <input class="work" type="text" placeholder="សូមបញ្ចូលមុខរបរ">
+            
+        </div>
+        
+        <div class="major">
+            <p>ការជ្រើសរើសជំនាញ</p>
+            <label class="label_major">ជំនាញ</label>
+            <input class="major1"type="text" placeholder="សូមបញ្ចូល">
+            <label>ជំនាន់</label>
+            <input class="gen" type="text">
+            <select class="year">
+                <option>ឆ្នាំទី</option>
+                <option>១</option>
+                <option>២</option>
+                <option>៣</option>
+                <option>៤</option>
+            </select>
+            <select>
+                <option>សូមជ្រើសរើសមហាវិទ្យាល័យ</option>
+                <option>មហាវិទ្យាល័យវិទ្យាសាស្រ្ត និងបច្ចេកវិទ្យា</option>
+                <option></option>
+                <option></option>
+            </select><br>
+            <label class="label_cert">សញ្ញាប័ត្រ</label>
+            <input type="text" class="certificate" placeholder="សូមបញ្ចូល">
+            <label>សម័យប្រឡង</label>
+            <input type="date" class="gen_exam">
+            
+        </div><br>
+        <div class="button">
+            <input type="submit" value="Register">
+        </div>
+    </div> 
+    
+    <!-----------Java Script--------->
+    
+    <script>
+            function previewBeforeUpload(id){
+                document.querySelector("#"+id).addEventListener("change",function(e){
+            if(e.target.files.length == 0){
+              return;
+            }
+                let file = e.target.files[0];
+                let url = URL.createObjectURL(file);
+                document.querySelector("#"+id+"-preview div").innerText = file.name;
+                document.querySelector("#"+id+"-preview img").src = url;
+          });
+        }
+
+        previewBeforeUpload("file-1");
+        previewBeforeUpload("file-2");
+        previewBeforeUpload("file-3");
+        
+    </script>
+</body>
+</html>
